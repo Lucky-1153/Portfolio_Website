@@ -10,7 +10,7 @@ import Projects from './components/Projects'
 import Contact from './components/Contact/index'
 import Footer from './components/Footer/Index'
 import {BrowserRouter as Router } from 'react-router-dom'
-
+import './App.css'
 const Body = styled.div`
   background-color: ${({ theme }) => theme.bg};
   width: 100%;

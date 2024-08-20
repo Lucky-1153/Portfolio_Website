@@ -10,22 +10,17 @@ const Index = () => {
         <Wrapper>
             <Title>Project</Title>
             <Desc>
-                I have Worked on a wide range of projects. From web apps to android apps. Here are some of my projects.
+                I have Worked on Web projects. Here are some of my projects.
             </Desc>
             <ToggleButtonGroup>
-                {toggle === 'all' ?
-                    <ToggleButton active value= "all" onclick={() => setToggle('all')}>All</ToggleButton>
-                    :
-                    <ToggleButton active value= "all" onclick={() => setToggle('all')}>All</ToggleButton>
-                }
-                {<Divider/>}
+                
                 {toggle === 'web app' ?
                     <ToggleButton active value= "web app" onclick={()=>
                         setToggle('all')}>WEB APP's</ToggleButton>
                     :
                     <ToggleButton value = "web app" onclick={() => setToggle('web app')}>WEB APP's</ToggleButton>
                 }
-                {<Divider/>}
+                {/* {<Divider/>}
                 {toggle === 'android app' ?
                     <ToggleButton active value= "android app" onclick={()=>
                         setToggle('android app')}>ANDROID APP's</ToggleButton>
@@ -38,7 +33,7 @@ const Index = () => {
                         setToggle('all')}>MACHINE LEARNING</ToggleButton>
                     :
                     <ToggleButton value = "machine learning" onclick={() => setToggle('machine learning')}>MACHINE LEARNING</ToggleButton>
-                }
+                } */}
             </ToggleButtonGroup>
             <CardContainer>
                 {toggle ==='all' && projects

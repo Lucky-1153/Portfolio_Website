@@ -4,6 +4,7 @@ import { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import { Snackbar } from '@mui/material';
 
+
 const Container = styled.div`
 display: flex;
 flex-direction: column;
@@ -126,25 +127,43 @@ const Index = () => {
     const [open, setOpen] = useState(false);
     const form = useRef();
     
-    const handleSubmit = (e) => {
+    const handleSubmit = async(e) => {
         e.preventDefault();
-        emailjs.sendForm('service_tox7kqs', 'template_nv7k7mj', form.current, 'SybVGsYS52j2TfLbi')
-            .then((result) => {
-                setOpen(true);
-                form.current.reset();
-            }, (error) => {
-                console.log(error.text);
-            });
+        // const {form_email} = e.target.elements
+        // const {subject} = e.target.elements
+        // await mailSender(
+        //   form_email,
+        //   'Password for your account has been updated',
+        //   subject
+        // )
+      
+
+        emailjs.sendForm('service_l3rj4tl', 'template_qlydwlw', form.current, 
+        'jjYiToQlGc8N2XXsL')
+        .then((result) => {
+            setOpen(true);
+            console.log("email",form.current)
+            form.current.reset();
+            console.log("email",form.current)
+        }, (error) => {
+            console.log(error.text);
+        });
     }
+
+
+        
+    
+
+
   return (
     <Container>
         <Wrapper>
             <Title>Contact</Title>
             <Desc>Feel free to reach out to me for any question or opportunities!</Desc>
             <ContactForm ref = {form} onSubmit={handleSubmit}>
-                <ContactTitle>Email Me 🚀</ContactTitle>
-                <ContactInput placeholder='Your Email' name='form_email' />
-                <ContactInput placeholder='Your Name' name='form_name' />
+                <ContactTitle>Contact Me 🚀</ContactTitle>
+                <ContactInput placeholder='Your Email' name='from_email' />
+                <ContactInput placeholder='Your Name' name='from_name' />
                 <ContactInput placeholder='Subject' name='subject' />
                 <ContactInputMessage placeholder="Message" rows ="4" name='message' />
                 <ContactButton type = "submit" value="Send" />
